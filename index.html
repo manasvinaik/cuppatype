@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CuppaType</title>
+  <link rel="icon" type="image/png" href="media/icon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @font-face {
+        font-family: 'boho';
+        src: url('media/BohemianSoul.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    body {
+      background-image: url('https://neothemes.neocities.org/images/roses-bg.gif');
+      background-size: auto;
+      background-repeat: repeat;
+      font-family: 'boho', serif; 
+      padding: 1em;
+      color: #5e3a50;
+    }
+
+    .box18 {
+      margin: 1em auto;
+      max-width: 700px;
+    }
+
+    .box-top, .box-bottom {
+      background-size: contain;
+    }
+
+    .box-top {
+      background-image: url('media/f-kado1.gif'), url('media/f-kado2.gif');
+      background-position: top left, top right;
+      background-repeat: no-repeat, no-repeat;
+      height: 77px;
+    }
+
+    .u01 {
+      background: url('media/f-ue.gif') repeat-x;
+      height: 77px;
+      margin: 0 75px 0 74px;
+    }
+
+    .box-center {
+      background-image: url('media/f-migi.gif'), url('media/f-hidari.gif');
+      background-position: top right, top left;
+      background-repeat: repeat-y, repeat-y;
+    }
+
+    .box-inner {
+      background: #fff0f5;
+      margin: 0 75px 0 74px;
+      padding: 1em;
+    }
+
+    .box-bottom {
+      background-image: url('media/f-kado3.gif'), url('media/f-kado4.gif');
+      background-position: top left, top right;
+      background-repeat: no-repeat, no-repeat;
+      height: 76px;
+    }
+
+    .s01 {
+      background: url('media/f-sita.gif') repeat-x;
+      height: 76px;
+      margin: 0 75px 0 74px;
+    }
+
+    /* main container */
+    #main-container {
+    background-image: url('media/gif1.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+    }
+
+    
+
+
+    @media (max-width: 640px) {
+        .u01,
+        .s01,
+        .box-inner {
+            margin: 0 10px;
+        }
+
+        .box-inner {
+            padding: 1.25em;
+            min-height: 90vh;
+        }
+
+        .box18 {
+            width: 100%;
+        }
+
+        .box-top,
+        .box-bottom {
+            background-size: 10%;
+        }
+    }
+  </style>
+</head>
+<body>
+  <!-- Info -->
+  <div class="fixed top-4 right-4 z-50">
+    <button id="info-btn" class="bg-white text-pink-700 border border-pink-300 rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-pink-100 transition font-bold text-lg" title="About this quiz">
+      i
+    </button>
+    <div id="info-box" class="hidden absolute right-0 mt-2 w-64 bg-white border border-pink-300 rounded-lg shadow-lg p-4 text-sm">
+      <p class="text-pink-800">
+        This cozy quiz was brewed by <strong>Manasvi Naik</strong>, inspired by the lovely <em>Love Pawsona</em>!<br><br>
+        If it made you smile, please do tell me! 💌<br>
+        <a href="https://www.linkedin.com/in/manasvinaik/" target="_blank" class="text-pink-600 underline hover:text-pink-800">
+          My LinkedIn ↗
+        </a>
+      </p>
+    </div>
+  </div>
+  <div class="box18">
+    <div class="box-top">
+      <div class="u01"></div>
+    </div>
+    <div class="box-center">
+      <div class="box-inner rounded-2xl">
+        <div class="bg-[#fff0f5] rounded-2xl w-full min-h-[60vh] max-h-[60vh] overflow-y-auto flex flex-col items-center justify-center text-center" id="main-container">
+          <h1 class="text-pink-900 text-5xl mb-4">CuppaType</h1>
+          <div class="bg-pink-200 bg-opacity-50 p-4 rounded-xl max-w-md mb-6">
+            <p class="text-lg text-black">
+              Ever wondered what kind of drink your personality would be if it walked into a cozy café? 
+              CuppaType is a cozy MBTI-inspired quiz that brews up a beverage based on your vibe °❀･
+            </p>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="quiz.html" class="bg-pink-200 text-pink-900 hover:bg-pink-300 transition px-6 py-2 rounded-full shadow-md font-semibold">
+              Start
+            </a>
+            <a href="AllResults.html" class="bg-white text-pink-700 border border-pink-300 hover:bg-pink-100 transition px-6 py-2 rounded-full shadow-md font-semibold">
+              All CuppaTypes
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="box-bottom">
+      <div class="s01"></div>
+    </div>
+  </div>
+
+  <script>
+    const infoBtn = document.getElementById("info-btn");
+    const infoBox = document.getElementById("info-box");
+    infoBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      infoBox.classList.toggle("hidden");
+    });
+    document.addEventListener("click", (e) => {
+      if (!infoBox.contains(e.target) && e.target !== infoBtn) {
+        infoBox.classList.add("hidden");
+      }
+    });
+  </script>
+</body>
+</html>
