@@ -39,5 +39,6 @@ This is my personal project — made with love, code, and too much caffeine — 
    
 2. **Clone the repo**
    ```bash
-   git clone https://github.com/yourusername/cuppatype.git
+   git clone https://github.com/manasvinaik/cuppatype.git
    cd cuppatype
+   ```
